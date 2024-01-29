@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <p class="mt-5">Hello World</p>
+  <Header />
+  <div class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+    <router-view />
   </div>
 </template>
-<script>
-export default {
-  
-}
+<script setup>
+import Header from '@/ui-components/Header.vue'
+
 </script>
 <style>
   
