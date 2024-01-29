@@ -5,7 +5,7 @@
   </div>
 </template>
 <script setup>
-import Header from '@/ui-components/Header.vue'
+import Header from '@/item-components/Header.vue'
 
 </script>
 <style>
