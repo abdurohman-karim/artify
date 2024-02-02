@@ -125,9 +125,15 @@ export default {
   methods: {
     submitHandler(e) {
       e.preventDefault();
-      this.$store.dispatch("register");
+      const data = {
+        username: "sammi",
+        email: "sammi@gmail.com",
+        password: "12345",
+      };
+      this.$store.dispatch("register", data);
     },
   },
 };
 </script>
-<style></style>
+<style>
+</style>
