@@ -2,7 +2,7 @@
     <LoginForm />
 </template>
 <script setup>
-import LoginForm from '@/item-components/LoginForm.vue'
+import LoginForm from '@/components/LoginForm.vue'
 </script>
 <style>
     

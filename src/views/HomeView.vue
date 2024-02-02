@@ -1,5 +1,3 @@
-
-import PrimaryButton from '@/ui-components/PrimaryButton.vue';
 <template>
     <div class="w-full  px-6 pt-14 lg:px-8">
         <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">

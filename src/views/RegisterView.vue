@@ -2,7 +2,7 @@
     <RegisterForm />
 </template>
 <script setup>
-import RegisterForm from '@/item-components/RegisterForm.vue'
+import RegisterForm from '@/components/RegisterForm.vue'
 
 </script>
 <style>
