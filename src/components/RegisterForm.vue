@@ -61,7 +61,6 @@
           </div>
           <div class="mt-2">
             <input
-              id="password"
               name="password"
               type="password"
               autocomplete="current-password"
@@ -81,8 +80,7 @@
           </div>
           <div class="mt-2">
             <input
-              id="password"
-              name="password"
+              name="confirm_password"
               type="password"
               autocomplete="current-password"
               required=""
@@ -126,14 +124,19 @@ export default {
     submitHandler(e) {
       e.preventDefault();
       const data = {
-        username: "sammi",
-        email: "sammi@gmail.com",
-        password: "12345",
+        name: "Наталья Семеновна Доронина",
+        username: "Greenholt",
+        bio: "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+        following: false,
+        email: "ghostmagic76@gmail.com",
+        password: "abdw42451",
+        image: "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/773.jpg"
       };
-      this.$store.dispatch("register", data);
+      this.$store.dispatch("register", data)
+      .then(user => console.log("USER", user))
+      .catch(error => console.log("ERROR", error));
     },
   },
 };
 </script>
-<style>
-</style>
+<style></style>
