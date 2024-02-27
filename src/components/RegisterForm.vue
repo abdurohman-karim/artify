@@ -17,58 +17,9 @@
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
       <form class="space-y-6" action="#" method="POST">
-        <div>
-          <label
-            for="name"
-            class="block text-sm font-medium leading-6 text-gray-900"
-            >Full Name</label
-          >
-          <div class="mt-2">
-            <input
-              id="name"
-              name="name"
-              type="text"
-              required=""
-              class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-            />
-          </div>
-        </div>
-        <div>
-          <label
-            for="email"
-            class="block text-sm font-medium leading-6 text-gray-900"
-            >Email address</label
-          >
-          <div class="mt-2">
-            <input
-              id="email"
-              name="email"
-              type="email"
-              autocomplete="email"
-              required=""
-              class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-            />
-          </div>
-        </div>
-
-        <div>
-          <div class="flex items-center justify-between">
-            <label
-              for="password"
-              class="block text-sm font-medium leading-6 text-gray-900"
-              >Password</label
-            >
-          </div>
-          <div class="mt-2">
-            <input
-              name="password"
-              type="password"
-              autocomplete="current-password"
-              required=""
-              class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-            />
-          </div>
-        </div>
+        <Input :label="'Username'" :type="'text'" v-model="username" />
+        <Input :label="'Email address'" :type="'email'" v-model="email" />
+        <Input :label="'Password'" :type="'password'" v-model="password" />
 
 
         <div>
@@ -95,30 +46,37 @@
   </div>
 </template>
 <script>
+
 export default {
-  
-  computed: {
-    isLoading() {
-      return this.$store.state.auth.isLoading;
+    data() {
+        return {
+            username: '',
+            email: '',
+            password: ''
+        };
     },
-  },
-  methods: {
-    submitHandler(e) {
-      e.preventDefault();
-      const data = {
-        name: "Наталья Семеновна Доронина",
-        username: "Greenholt",
-        bio: "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
-        following: false,
-        email: "ghostmagic76@gmail.com",
-        password: "abdw42451",
-        image: "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/773.jpg"
-      };
-      this.$store.dispatch("register", data)
-      .then(user => console.log("USER", user))
-      .catch(error => console.log("ERROR", error));
+    computed: {
+        isLoading() {
+            return this.$store.state.auth.isLoading;
+        },
     },
-  },
+    methods: {
+        submitHandler(e) {
+            e.preventDefault();
+            const data = {
+                name: "none",
+                username: this.username,
+                bio: "none",
+                following: false,
+                email: this.email,
+                password: this.password,
+                image: "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/773.jpg"
+            };
+            this.$store.dispatch("register", data)
+                .then(user => console.log("USER", user))
+                .catch(error => console.log("ERROR", error));
+        },
+    },
 };
 </script>
 <style>
