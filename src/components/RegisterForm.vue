@@ -73,7 +73,7 @@ export default {
                 image: "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/773.jpg"
             };
             this.$store.dispatch("register", data)
-                .then(user => console.log("USER", user))
+                .then(user => {console.log("USER", user), this.$router.push({name: 'home'})})
                 .catch(error => console.log("ERROR", error));
         },
     },
